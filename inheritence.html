@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(age, height,name){
+                this.age=age;
+                this.height=height;
+                this.name=name;
+            }
+        
+            describe(){
+            console.log(`Person's age is ${this.age}, height is ${this.height}, name is ${this.name}`)
+            }
+        }
+        
+        class Programmer extends Person{
+            constructor(age, height, name, experience){
+                super(age,height,name)
+                this.experience=experience;
+            }
+
+            code(){
+                console.log(`${this.name} is coding`)
+            }
+        }
+        
+        let person1=new Person(40,170,"Raju");
+        let programmer1=new Programmer(24,174,"Ravi",1);
+        let programmer2=new Programmer(32,160,"Akhil",4);
+        
+        let programmers=[programmer1,programmer2]
+
+        console.log(person1.describe());
+        console.log(programmer1.describe());
+        console.log(programmer1.code());
+
+        function developSoftware(programmers){
+            programmers.forEach((programmer)=>{
+                programmer.code();
+            })
+        }
+
+        developSoftware(programmers);
+        
+    </script>
+</body>
+</html>
